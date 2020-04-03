@@ -1,0 +1,30 @@
+service: ${self:custom.stage}-proxy
+
+plugins:
+  - serverless-offline
+
+custom:
+  stage: ${opt:stage, "sandbox"}
+provider:
+  name: aws
+  runtime: nodejs10.x
+  stage: ${self:custom.stage}
+  region: us-east-1
+  vpc:
+    securityGroupIds:
+      - ${env:SECURITY_GROUP_ID}
+    subnetIds:
+      "Fn::Split":
+          - ","
+          - ${env:SUBNET_IDS}
+  environment:
+    OMIT_HEADERS:
+      -
+functions:
+  proxy:
+    handler: src/handler.proxy
+    events:
+      - http:
+          path: /{path+}
+          method: any
+          cors: true
