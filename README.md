@@ -12,3 +12,5 @@ Now run ```npm run deploy```
 # How to use:
   Send a request to the API passing your original request after /proxy/http[s]
   `ex:localhost:3000/sandbox/proxy/http[s]/checkip.amazonaws.com`
+
+  Any http method and headers you use you be passed for the url you want to request.
