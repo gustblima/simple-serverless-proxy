@@ -1,5 +1,5 @@
 # simple-serverless-proxy
-POG to workaround a external service that can only receive requests from our server IP
+Simple serverless proxy in development. Created using serverless, you can deploy it on AWS and make requests through it
 
 # Run locally:
   ```npm run local```
