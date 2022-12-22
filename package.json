@@ -8,7 +8,7 @@
   },
   "devDependencies": {
     "serverless": "^1.67.0",
-    "serverless-offline": "^6.1.2"
+    "serverless-offline": "^12.0.3"
   },
   "scripts": {
     "local": "sls offline",
